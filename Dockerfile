@@ -12,7 +12,7 @@ RUN cp /application/target/$JAR_FILE_NAME app.jar
 
 ENV JAVA_APP_JAR=app.jar
 
-EXPOSE 18787 8888
+EXPOSE ${PORT_8787} ${PORT_8888}
 
 ENV JAVA_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n"
 RUN sh -c 'touch /app.jar'
